@@ -25,6 +25,8 @@ export interface IDebuggerApi {
     showMessage (title: string, message: string): void
     onStartDebugging (debuggerBackend: any): Promise<void> // called when debug starts
     onStopDebugging (): Promise<void> // called when debug stops
+    getCache: (key: string) => Promise<any>
+    setCache(key: string, value: any): Promise<void>
 }
 
 type globalContextFunction = () => { block, tx, receipt }
